@@ -44,6 +44,7 @@ public class Localizacao {
 		//JComboBox - Estados
 		JComboBox<String> estados = new JComboBox<>();
 		estados.setBounds(100, 40, 200, 40);
+		estados.addItem("Selecione um estado");
 		estados.addItem("Santa Catarina");
 		estados.addItem("Parana");
 		estados.addItem("Rio Grande do Sul");
@@ -72,25 +73,12 @@ public class Localizacao {
 			//Obter os dados
 			String estado = estados.getSelectedItem().toString();
 			
-				if(estado.equals("Santa Catarina")) {
-					cidades.addItem("Blumenau");
-					cidades.addItem("Penha");
-					cidades.addItem("Pomerode");
-					
-					
-					
-				}else if(estado.equals("Parana")) {
-					cidades.addItem("Curitiba");
-					cidades.addItem("Foz do Iguaçu");
-					cidades.addItem("Maringa");
-					
-					
-				}else if(estado.equals("Rio Grande do Sul")) {
-					cidades.addItem("Porto Alegre");
-					cidades.addItem("Pelotas");
-					cidades.addItem("Gramado");
-					
-				}
+			switch(estado) {
+			case "Selecione um estado":
+				cidades.setSelectedItem(-1);
+			break;
+			
+			}
 					
 				//Variavel para usar na acao
 				String cidade = cidades.getSelectedItem().toString();
