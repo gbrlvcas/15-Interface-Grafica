@@ -54,7 +54,6 @@ public class Localizacao {
 		cidades.setBounds(100, 120, 200, 40);
 		
 		
-		
 		//JButton
 		JButton btn = new JButton("Pesquisar");
 		btn.setBounds(140, 300, 100, 50);
@@ -67,17 +66,21 @@ public class Localizacao {
 				
 			//Limpar estados
 			cidades.removeAllItems();
+			
 			//Obter os dados
 			String estado = estados.getSelectedItem().toString();
+			
 				if(estado.equals("Santa Catarina")) {
 					cidades.addItem("Blumenau");
 					cidades.addItem("Penha");
 					cidades.addItem("Pomerode");
 					
+					
 				}else if(estado.equals("Parana")) {
 					cidades.addItem("Curitiba");
 					cidades.addItem("Foz do Iguaçu");
 					cidades.addItem("Maringa");
+					
 					
 				}else if(estado.equals("Rio Grande do Sul")) {
 					cidades.addItem("Porto Alegre");
@@ -85,22 +88,22 @@ public class Localizacao {
 					cidades.addItem("Gramado");
 					
 				}
-				btn.addActionListener(new ActionListener() {
-					
-					@Override
-					public void actionPerformed(ActionEvent arg0) {
-						
-						//Variavel para usar na acao
-						String cidade = cidades.getSelectedItem().toString();
-						
-						//Criando o Objeto
-						Acao a = new Acao(cidade);	
-						
-					}
-				});
 				
+				
+			
+				//Variavel para usar na acao
+				String cidade = cidades.getSelectedItem().toString();
+				
+				//Criando o Objeto
+				Acao a = new Acao(cidade);
+				
+				
+	
 			}
 		});
+		
+		
+	
 		
 		
 		//Adicionando ao componente
