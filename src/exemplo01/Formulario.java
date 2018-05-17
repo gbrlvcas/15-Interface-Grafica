@@ -63,7 +63,13 @@ public class Formulario {
 				//Criar objetos
 				Acao a = new Acao(nomeProduto, formaPagamento, valorProduto);
 				
-			}
+				//Limpar os campos
+				txtNomeProduto.setText("");
+				combo.setSelectedIndex(0);
+				txtValorProduto.setText("");
+				
+				//Selecionar o campo
+				txtNomeProduto.requestFocus();			}
 		});
 		
 		
