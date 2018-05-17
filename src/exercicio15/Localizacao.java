@@ -49,15 +49,17 @@ public class Localizacao {
 		estados.addItem("Rio Grande do Sul");
 		estados.setFont(new Font("Calibri", Font.BOLD, 16));
 		
-		//JComboBox - Cidades (Santa Catarina)
+		//JComboBox - Cidades
 		JComboBox<String>cidades = new JComboBox<>();
 		cidades.setBounds(100, 120, 200, 40);
-		
+		cidades.setSelectedIndex(-1);
+	
 		
 		//JButton
-		JButton btn = new JButton("Pesquisar");
+		JButton btn = new JButton("Prosseguir");
 		btn.setBounds(140, 300, 100, 50);
 		
+
 		//Função do botão
 		btn.addActionListener(new ActionListener() {
 			
@@ -76,6 +78,7 @@ public class Localizacao {
 					cidades.addItem("Pomerode");
 					
 					
+					
 				}else if(estado.equals("Parana")) {
 					cidades.addItem("Curitiba");
 					cidades.addItem("Foz do Iguaçu");
@@ -88,19 +91,22 @@ public class Localizacao {
 					cidades.addItem("Gramado");
 					
 				}
-				
-				
-			
+					
 				//Variavel para usar na acao
 				String cidade = cidades.getSelectedItem().toString();
-				
-				//Criando o Objeto
+						
+			    //Criando o Objeto
 				Acao a = new Acao(cidade);
+					
+						
+					}
+				});
+			
+				
 				
 				
 	
-			}
-		});
+		
 		
 		
 	
