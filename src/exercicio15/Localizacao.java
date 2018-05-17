@@ -15,7 +15,7 @@ public class Localizacao {
 
 	public Localizacao() {
 		
-		//JFrame - Criando a caixa
+		//JFrame - Criando a caixaa
 		JFrame local = new JFrame("Localização");
 		local.setSize(400,400);
 		local.setLocationRelativeTo(null);
