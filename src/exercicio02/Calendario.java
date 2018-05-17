@@ -56,12 +56,10 @@ public class Calendario {
 				txtData.setText("");
 				
 				//Selecionar o campo
-				txtData.requestDefaultFocus();
+				txtData.requestFocus();
 				
 			}
 		});
-		
-		
 		
 		
 		//Adicionando o componente

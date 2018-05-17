@@ -12,7 +12,7 @@ public class Acao {
 		boolean valida = validarCampo(data);
 		
 			//Mensagem da validação
-		JOptionPane.showMessageDialog(null, valida == true ? "Falha!" : "OK");
+		JOptionPane.showMessageDialog(null, valida == true ? "Falha!" : "O dia escolhido cai num...");
 		
 			//Verificar se o campo esta validado
 		if(valida == true) {
