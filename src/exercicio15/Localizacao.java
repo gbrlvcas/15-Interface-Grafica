@@ -65,6 +65,8 @@ public class Localizacao {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+			//Limpar estados
+			cidades.removeAllItems();
 			//Obter os dados
 			String estado = estados.getSelectedItem().toString();
 				if(estado.equals("Santa Catarina")) {
@@ -76,12 +78,26 @@ public class Localizacao {
 					cidades.addItem("Curitiba");
 					cidades.addItem("Foz do Iguaçu");
 					cidades.addItem("Maringa");
+					
+				}else if(estado.equals("Rio Grande do Sul")) {
+					cidades.addItem("Porto Alegre");
+					cidades.addItem("Pelotas");
+					cidades.addItem("Gramado");
+					
 				}
-				
-				
-
-				
-				
+				btn.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						
+						//Variavel para usar na acao
+						String cidade = cidades.getSelectedItem().toString();
+						
+						//Criando o Objeto
+						Acao a = new Acao(cidade);	
+						
+					}
+				});
 				
 			}
 		});
