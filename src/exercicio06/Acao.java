@@ -6,25 +6,15 @@ public class Acao {
 	//Atributos
 	String resultado = "";
 	boolean erro = false;
-	double calculando = 0;
-	
-	
+	public static double armazenaValor = 0;
+
 	public Acao(String quantidade, String valor ){
 		
 		//Variaveis
-		
-		calculando+= calcResultado(quantidade, valor);
-		
 	
-		erro = erroQuantidade(quantidade);
-		
 		if(erro == true){
 			resultado = "Digite apenas números";
-		}else {
-			
-			resultado = String.valueOf(calculando);
 		}
-		
 	}
 	
 	//Método de validação
@@ -49,21 +39,13 @@ public class Acao {
 	}
 	
 	//Método para calcular o valor
-	public Double calcResultado(String quantidade, String valor){
+	public static void calcResultado(String quantidade, String valor){
 		
 		//Variaveis
 		double calculo = 0;
 		
 		//Calculando
-		calculo = Double.parseDouble(quantidade) * Double.parseDouble(valor);
-		
-		
-		//Retorno
-		return calculo;
-		
-		
-		
-		
+		calculo += Double.parseDouble(quantidade) * Double.parseDouble(valor);
 		
 		
 		

@@ -94,16 +94,17 @@ public class InterfaceGrafica {
 		String quantidade = txtquant.getText();
 		String valor = valores.getSelectedItem().toString();
 		
-		Acao a = new Acao(quantidade, valor);
-		if(a.erro == true) {
-		erro.setText(a.resultado);
 		
+		Acao a = new Acao(quantidade, valor);
+		
+		if(a.erro == true) {
+			erro.setText(a.resultado);
 		}else {
 			erro.setText("");
-			resultado.setText(a.resultado);
+			resultado.setText(String.valueof(a.calcResultado(quantidade, valor)));
 		}
-			
 		}
+		
 	});
 		
 	//Adicionando os componentes
