@@ -26,12 +26,12 @@ public class InterfaceGrafica {
 	contaDin.setLayout(null);
 	
 	//BackGround
-	JLabel bg = new JLabel(new ImageIcon("C:\\Users\\104969\\Desktop\\Trabalho Programador\\15 - Interface Grafica\\src\\exercicio06\\dindin.gif"));
+	JLabel bg = new JLabel(new ImageIcon("C:\\Users\\Gbrlvcas\\Desktop\\Programacao\\15-Interface-Grafica\\src\\exercicio06\\dindin.gif"));
 	bg.setBounds(-150, 0, 700, 346);
 	
 	//Fala Julius [1]
 	JLabel lbljulius = new JLabel("Voce esta gastando 45 centavos para programar isso");
-	lbljulius.setBounds(0, 320, 500, 20);
+	lbljulius.setBounds(0, 303, 500, 20);
 	lbljulius.setFont(new Font("Arial", Font.BOLD, 18));
 	lbljulius.setForeground(Color.BLACK);
 	lbljulius.setBackground(Color.WHITE);
@@ -60,22 +60,29 @@ public class InterfaceGrafica {
 	valores.setBounds(310, 160, 100, 50);
 	valores.setFont(new Font("Calibri", Font.BOLD, 20));
 	valores.addItem("   Valor");
-	valores.addItem(" R$ 0.01");
-	valores.addItem(" R$ 0.05");
-	valores.addItem(" R$ 0.10");
-	valores.addItem(" R$ 0.25");
-	valores.addItem(" R$ 0.50");
-	valores.addItem(" R$ 1.00");
+	valores.addItem(" 0.01");
+	valores.addItem(" 0.05");
+	valores.addItem(" 0.10");
+	valores.addItem(" 0.25");
+	valores.addItem(" 0.50");
+	valores.addItem(" 1.00");
 
 	//Botão para calcular [3]
 	JButton btncalc = new JButton("Calcular");
 	btncalc.setBounds(310, 220, 100, 50);
 	
+	
 	//Resultado
-	JLabel resultado = new JLabel("Teste");
+	JLabel resultado = new JLabel("");
 	resultado.setBounds(30, 220, 100, 50);
 	resultado.setFont(new Font("Calibri", Font.BOLD, 40));
 	resultado.setForeground(Color.WHITE);
+	
+	//Resultado
+	JLabel erro = new JLabel("");
+	erro.setBounds(30, 220, 220, 50);
+	erro.setFont(new Font("Calibri", Font.BOLD, 22));
+	erro.setForeground(Color.WHITE);
 	
 	
 	//Ação do botão [3]
@@ -88,6 +95,13 @@ public class InterfaceGrafica {
 		String valor = valores.getSelectedItem().toString();
 		
 		Acao a = new Acao(quantidade, valor);
+		if(a.erro == true) {
+		erro.setText(a.resultado);
+		
+		}else {
+			erro.setText("");
+			resultado.setText(a.resultado);
+		}
 			
 		}
 	});
@@ -102,6 +116,7 @@ public class InterfaceGrafica {
 		contaDin.add(txtquant);
 		contaDin.add(lblvalores);
 		contaDin.add(resultado);
+		contaDin.add(erro);
 		
 		//Combobox
 		contaDin.add(valores);

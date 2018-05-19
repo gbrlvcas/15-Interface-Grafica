@@ -1,21 +1,24 @@
 package exercicio06;
 
-import javax.swing.JOptionPane;
 
 public class Acao {
 
 	//Atributos
 	Double calculando = 0.00;
+	String resultado = "";
+	boolean erro = false;
 	
 	public Acao(String quantidade, String valor ){
 		
-		boolean erro = erroQuantidade(quantidade);
+		erro = erroQuantidade(quantidade);
 		
 		if(erro == true){
-			JOptionPane.showMessageDialog(null, "Digite um numero");
-		}else{
-			JOptionPane.showMessageDialog(null, calcResultado(quantidade, valor));
+			resultado = "Digite apenas números";
+		}else {
+			calculando+= calcResultado(quantidade, valor);
+			resultado = String.valueOf(calculando);
 		}
+		
 	}
 	
 	//Método de validação
@@ -42,11 +45,20 @@ public class Acao {
 	//Método para calcular o valor
 	public Double calcResultado(String quantidade, String valor){
 		
+		//Variaveis
+		double calculo = 0;
 		
 		//Calculando
-		calculando += Double.parseDouble(quantidade) * Double.parseDouble(valor);
+		calculo += Double.parseDouble(quantidade) * Double.parseDouble(valor);
 		
-		return calcResultado(quantidade, valor);
+		
+		//Retorno
+		return calculo;
+		
+		
+		
+		
+		
 		
 		
 	}
