@@ -10,11 +10,16 @@ public class Acao {
 
 	public Acao(String quantidade, String valor ){
 		
-		//Variaveis
-	
+		
+		//Condicional
+		erro = erroQuantidade(quantidade);
+		
 		if(erro == true){
 			resultado = "Digite apenas números";
 		}
+		
+		
+		
 	}
 	
 	//Método de validação
@@ -34,20 +39,21 @@ public class Acao {
 			erro = true;
 		}
 		
+
 		//Retornar valor
 		return erro;
 	}
 	
 	//Método para calcular o valor
-	public static void calcResultado(String quantidade, String valor){
+	public static double calcResultado(String quantidade, String valor){
 		
-		//Variaveis
-		double calculo = 0;
+		
 		
 		//Calculando
-		calculo += Double.parseDouble(quantidade) * Double.parseDouble(valor);
+		armazenaValor += Double.parseDouble(quantidade) * Double.parseDouble(valor);
 		
-		
+		//Retornar
+		return armazenaValor;
 		
 	}
 }

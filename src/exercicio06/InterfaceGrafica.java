@@ -74,7 +74,7 @@ public class InterfaceGrafica {
 	
 	//Resultado
 	JLabel resultado = new JLabel("");
-	resultado.setBounds(30, 220, 100, 50);
+	resultado.setBounds(30, 220, 200, 50);
 	resultado.setFont(new Font("Calibri", Font.BOLD, 40));
 	resultado.setForeground(Color.WHITE);
 	
@@ -101,7 +101,8 @@ public class InterfaceGrafica {
 			erro.setText(a.resultado);
 		}else {
 			erro.setText("");
-			resultado.setText(String.valueof(a.calcResultado(quantidade, valor)));
+			resultado.setText(String.valueOf("R$ "+a.calcResultado(quantidade, valor)));
+			
 		}
 		}
 		
