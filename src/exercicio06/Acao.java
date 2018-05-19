@@ -4,18 +4,24 @@ package exercicio06;
 public class Acao {
 
 	//Atributos
-	Double calculando = 0.00;
 	String resultado = "";
 	boolean erro = false;
+	double calculando = 0;
+	
 	
 	public Acao(String quantidade, String valor ){
 		
+		//Variaveis
+		
+		calculando+= calcResultado(quantidade, valor);
+		
+	
 		erro = erroQuantidade(quantidade);
 		
 		if(erro == true){
 			resultado = "Digite apenas números";
 		}else {
-			calculando+= calcResultado(quantidade, valor);
+			
 			resultado = String.valueOf(calculando);
 		}
 		
@@ -49,7 +55,7 @@ public class Acao {
 		double calculo = 0;
 		
 		//Calculando
-		calculo += Double.parseDouble(quantidade) * Double.parseDouble(valor);
+		calculo = Double.parseDouble(quantidade) * Double.parseDouble(valor);
 		
 		
 		//Retorno
