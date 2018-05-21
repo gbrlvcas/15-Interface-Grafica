@@ -17,7 +17,7 @@ public class InterfaceGrafica {
 		
 		//JFrame
 		
-			//Caixa
+			//Caixaa
 			JFrame caixa = new JFrame("Lanchonete");
 			caixa.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			caixa.setSize(500,500);
