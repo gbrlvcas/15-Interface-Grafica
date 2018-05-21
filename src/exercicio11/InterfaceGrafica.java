@@ -15,7 +15,7 @@ public class InterfaceGrafica {
 
 	public InterfaceGrafica() {
 		
-		//JFrame
+		//JFramee
 		
 			//Caixaa
 			JFrame caixa = new JFrame("Lanchonete");
